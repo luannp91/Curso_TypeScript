@@ -2,8 +2,8 @@ const num1 = 3
 const num2 = 9
 
 
-function sum(num: number) {
+function sum1(num: number) {
     console.log("A soma é: " + num);    
 }
 
-sum(num1 + num2)
+sum1(num1 + num2)
