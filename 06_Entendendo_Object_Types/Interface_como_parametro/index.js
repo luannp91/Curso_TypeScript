@@ -64,8 +64,8 @@ console.log(anotherUser[0]);
 anotherUser[0] = "Emma";
 console.log(anotherUser[0]);
 //  9   -   Tuplas ReadOnly
-function showNumbers(numbers) {
+function showNumber(numbers) {
     console.log(numbers[0]);
     console.log(numbers[1]);
 }
-showNumbers([1, 2]);
+showNumber([1, 2]);
