@@ -1,14 +1,19 @@
-//  1   -   Integração TS + Express
 console.log("Express + TS");
 
-
-//  2   -   Iniciando o Express
 import express from "express";
 
 const app = express();
 
+app.use(express.json())
+
 app.get("/", (req, res) => {
     return res.send("Hello Express!!!")
+})
+
+app.post("/api/product", (req, res) => {
+    console.log(req.body);
+    
+    return res.send("Produto adicionado!!!")
 })
 
 app.listen(3000, () => {
