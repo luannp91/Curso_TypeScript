@@ -100,6 +100,23 @@ app.get("/api/user/:id/acess", checkUser, (req: Request, res: Response) => {
     return res.json({ msg: "Bem-vindo a área administrativa!!!"})
 })
 
+app.get("/api/user/:id/details/:name", (req: Request<{ id: string; name: string }>, res: Response<{ status: boolean }>) => {
+    console.log(`ID: ${req.params.id}`);
+    console.log(`Name: ${req.params.name}`);
+    
+    return res.json({ status: true })
+})
+
+app.get("/api/error", (req: Request, res: Response) => {
+
+    try {
+        throw new Error("Algo deu errado!!!")
+    } 
+    catch (e: any) {
+        res.status(500).json({ msg: e.message })    
+    }
+})
+
 app.listen(3000, () => {
     console.log("Aplicação de TypeScript + Express funcionando!!!");    
 })
