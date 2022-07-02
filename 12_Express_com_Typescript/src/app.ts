@@ -70,6 +70,14 @@ app.get("/api/product/:id/review/:reviewId", (req: Request, res: Response) => {
     return res.send(`Acessando a review ${reviewId} do produto ${productId}`)
 })
 
+function getUser(req: Request, res: Response) {
+    console.log(`Resgatando o usuário com id: ${req.params.id}`);
+    
+    return res.send("O usuário foi encontrado!!!")
+}
+
+app.get("/api/user/:id", getUser)
+
 app.listen(3000, () => {
     console.log("Aplicação de TypeScript + Express funcionando!!!");    
 })
